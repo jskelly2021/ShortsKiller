@@ -1,0 +1,39 @@
+# ==============================
+# macOS
+# ==============================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==============================
+# Xcode
+# ==============================
+build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# User-specific settings
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Archives
+# ==============================
+*.ipa
+*.dSYM.zip
+*.dSYM
