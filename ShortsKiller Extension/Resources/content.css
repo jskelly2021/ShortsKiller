@@ -1,19 +1,38 @@
-/* Hide obvious Shorts UI pieces (best-effort) */
-ytd-reel-shelf-renderer,
-ytd-rich-shelf-renderer[is-shorts],
-ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
-ytd-shorts,
-ytd-shorts-shelf-renderer {
+/* Hide top-level Shorts tabs/chips/buttons (best-effort) */
+tp-yt-paper-tab[aria-label*="Shorts"],
+tp-yt-paper-tab[title*="Shorts"],
+yt-tab-shape[aria-label*="Shorts"],
+yt-tab-shape[title*="Shorts"],
+a[aria-label*="Shorts"][href^="/shorts"],
+a[title*="Shorts"][href^="/shorts"],
+a[href^="/shorts"] {
   display: none !important;
 }
 
-/* Sometimes Shorts appear as a "reel shelf" on home */
-a[href^="/shorts/"] {
-  /* Don’t hide all links globally, just prevent visible Shorts tiles */
+/* Bottom nav item "Shorts (mobile)*/
+ytm-pivot-bar-item-renderer[aria-label*="Shorts"],
+ytm-pivot-bar-item-renderer[title*="Shorts"],
+ytm-pivot-bar-item-renderer a[href^="/shorts"],
+ytm-pivot-bar-item-renderer [href^="/shorts"],
+ytm-pivot-bar-item-renderer:has(a[href^="/shorts"]) {
+  display: none !important;
+  
+/* Mobile YouTube bottom pivot bar: hide Shorts tab */
+ytm-pivot-bar-item-tab.pivot-shorts {
+display: none !important;
+}
+
+/* If YouTube swaps markup slightly, this still catches it */
+ytm-pivot-bar-renderer ytm-pivot-bar-item-tab[class*="pivot-shorts"] {
+display: none !important;
 }
 
 /* Left nav item “Shorts” (desktop) */
-ytd-guide-entry-renderer a[title="Shorts"],
-ytd-mini-guide-entry-renderer a[title="Shorts"] {
+ytd-guide-entry-renderer a[href^="/shorts"],
+ytd-mini-guide-entry-renderer a[href^="/shorts"] {
   display: none !important;
+}
+
+body {
+  outline: 5px solid red !important;
 }

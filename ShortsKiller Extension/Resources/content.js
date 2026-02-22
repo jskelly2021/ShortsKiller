@@ -1,4 +1,14 @@
- (() => {
+ (function injectNoFlashCSS() {
+   if (document.getElementById("no-shorts-style")) return;
+   const style = document.createElement("style");
+   style.id = "no-shorts-style";
+   style.textContent = `
+     ytm-pivot-bar-item-tab.pivot-shorts { display: none !important; }
+   `;
+   document.documentElement.appendChild(style);
+ })();
+
+(() => {
    "use strict";
 
    // ---------- Config ----------
@@ -7,8 +17,9 @@
 
    // If you're on m.youtube.com, prefer mobile home
    function preferredHome() {
-     return location.hostname.startsWith("m.") ? MOBILE_HOME_URL : HOME_URL;
+      return location.hostname.startsWith("m.") ? MOBILE_HOME_URL : HOME_URL;
    }
+
 
    // ---------- Redirect Shorts pages ----------
    function redirectIfOnShortsPage() {
@@ -33,22 +44,41 @@
      return false;
    }
 
+
    // ---------- Remove Shorts UI (best effort selectors) ----------
    function removeShortsUI(root = document) {
      // 1) Remove shelves/renderers explicitly for shorts (desktop + mobile variants)
-     const selectorsToRemove = [
-       "ytd-reel-shelf-renderer",
-       "ytd-rich-shelf-renderer[is-shorts]",
-       "ytd-shorts-shelf-renderer",
-       "ytd-reel-video-renderer",
-       "ytm-reel-shelf-renderer",
-       "ytm-reel-item-renderer",
-       "ytm-shorts-lockup-view-model"
-     ];
+       const selectorsToRemove = [
+        // Shorts shelves / reels (desktop + mobile)
+        "ytd-reel-shelf-renderer",
+        "ytd-rich-shelf-renderer[is-shorts]",
+        "ytd-shorts-shelf-renderer",
+        "ytd-reel-video-renderer",
+        "ytm-reel-shelf-renderer",
+        "ytm-reel-item-renderer",
+        "ytm-shorts-lockup-view-model",
 
-     for (const sel of selectorsToRemove) {
-       root.querySelectorAll(sel).forEach(el => el.remove());
-     }
+        // Mobile bottom nav Shorts tab (your exact working hook)
+        "#app ytm-pivot-bar-renderer ytm-pivot-bar-item-tab.pivot-shorts",
+
+        // Other possible mobile nav/tab variants
+        "ytm-pivot-bar-item-renderer[aria-label*='Shorts']",
+        "ytm-pivot-bar-item-renderer[title*='Shorts']",
+
+        // Desktop tabs that sometimes show “Shorts”
+        'tp-yt-paper-tab[aria-label*="Shorts"]',
+        'tp-yt-paper-tab[title*="Shorts"]',
+        'yt-tab-shape[aria-label*="Shorts"]',
+        'yt-tab-shape[title*="Shorts"]'
+      ];
+
+       for (const sel of selectorsToRemove) {
+         try {
+           root.querySelectorAll(sel).forEach(el => el.remove());
+         } catch (err) {
+           // Ignore selector errors to avoid killing the whole script
+         }
+       }
 
      // 2) Remove any video tile/card that links to /shorts/<id>
      root.querySelectorAll('a[href^="/shorts/"]').forEach(a => {
@@ -78,28 +108,47 @@
        root.querySelectorAll(sel).forEach(a => a.closest("ytd-guide-entry-renderer, ytd-mini-guide-entry-renderer")?.remove() || a.remove());
      }
 
-     // 4) Remove top tabs/chips that lead to Shorts (sometimes appears as a chip)
-     root.querySelectorAll('a[href^="/shorts"]').forEach(a => a.remove());
+       // 4) Remove any clickable UI that targets /shorts (tabs/buttons/etc.)
+       const shortsRouteSelectors = [
+         '[href^="/shorts"]',
+         '[role="tab"][href^="/shorts"]',
+         '[role="tab"][aria-label*="Shorts"]',
+         '[aria-label*="Shorts"][href]',
+         '[title*="Shorts"][href]'
+       ];
+
+       for (const sel of shortsRouteSelectors) {
+         root.querySelectorAll(sel).forEach(el => {
+           const href = el.getAttribute?.("href") || "";
+           const label = (el.getAttribute?.("aria-label") || "") + " " + (el.getAttribute?.("title") || "");
+           if (href.startsWith("/shorts") || label.includes("Shorts")) {
+             el.remove();
+           }
+         });
+       }
    }
+
 
    // ---------- Intercept clicks to Shorts ----------
-   function rewriteShortsLinks(e) {
-     const a = e.target?.closest?.("a");
-     if (!a) return;
+     function rewriteShortsLinks(e) {
+       const el = e.target?.closest?.("a, [href]");
+       if (!el) return;
 
-     const href = a.getAttribute("href") || "";
-     if (!href.startsWith("/shorts/")) return;
+       const href = el.getAttribute("href") || "";
+       if (!href.startsWith("/shorts/") && href !== "/shorts") return;
 
-     e.preventDefault();
-     e.stopPropagation();
+       e.preventDefault();
+       e.stopPropagation();
 
-     const id = href.split("/")[2]?.split("?")[0];
-     if (id) {
-       location.assign(`/watch?v=${encodeURIComponent(id)}`);
-     } else {
-       location.assign(preferredHome());
+       const id = href.split("/")[2]?.split("?")[0];
+       if (id) {
+         console.log("Blocked Shorts nav click, redirecting");
+         location.assign(`/watch?v=${encodeURIComponent(id)}`);
+       } else {
+         location.assign(preferredHome());
+       }
      }
-   }
+
 
    // ---------- Handle SPA navigations ----------
    // YouTube changes URLs without full page loads; we hook history methods.
@@ -129,6 +178,24 @@
      window.addEventListener("popstate", onNav);
    }
 
+
+     // ---------- URL Change Watcher ----------
+     function watchUrlChanges() {
+       let last = location.href;
+
+       setInterval(() => {
+         const now = location.href;
+         if (now !== last) {
+           last = now;
+           // If we landed in shorts, redirect immediately
+           if (redirectIfOnShortsPage()) return;
+           // Otherwise keep cleaning
+           removeShortsUI(document);
+         }
+       }, 250);
+     }
+
+
    // ---------- MutationObserver: keep removing Shorts as they appear ----------
    function observeDom() {
      const obs = new MutationObserver(mutations => {
@@ -147,6 +214,7 @@
      });
    }
 
+
    // ---------- Boot ----------
    // 1) Early redirect if already on Shorts
    if (redirectIfOnShortsPage()) return;
@@ -163,4 +231,7 @@
 
    // 5) Observe the dynamic UI
    observeDom();
+
+   // 6) Watch URL changes (catches navigations history hooks miss)
+   watchUrlChanges();
  })();
