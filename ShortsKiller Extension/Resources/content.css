@@ -1,0 +1,19 @@
+/* Hide obvious Shorts UI pieces (best-effort) */
+ytd-reel-shelf-renderer,
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+ytd-shorts,
+ytd-shorts-shelf-renderer {
+  display: none !important;
+}
+
+/* Sometimes Shorts appear as a "reel shelf" on home */
+a[href^="/shorts/"] {
+  /* Don’t hide all links globally, just prevent visible Shorts tiles */
+}
+
+/* Left nav item “Shorts” (desktop) */
+ytd-guide-entry-renderer a[title="Shorts"],
+ytd-mini-guide-entry-renderer a[title="Shorts"] {
+  display: none !important;
+}
