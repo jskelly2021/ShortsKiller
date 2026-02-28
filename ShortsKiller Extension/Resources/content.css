@@ -9,8 +9,16 @@ ytm-reel-shelf-renderer,
 /* Remove the shorts tab on profiles */
 yt-tab-shape[tab-title="Shorts"],
 
+/* Remove grid-style Shorts lockups */
+grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+
+/* Remove big shorts singleton */
+ytm-video-with-context-renderer:has(ytm-media-item[class="big-shorts-singleton"]),
+
 /* Hide entire compact video cards that are Shorts */
 ytm-compact-video-renderer:has(a[href^="/shorts/"]),
-ytm-compact-video-renderer:has([data-style="SHORTS"]) {
+ytm-compact-video-renderer:has([data-style="SHORTS"])
+
+{
   display: none !important;
 }
