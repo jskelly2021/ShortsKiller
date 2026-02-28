@@ -13,7 +13,8 @@ yt-tab-shape[tab-title="Shorts"],
 grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
 
 /* Remove big shorts singleton */
-ytm-video-with-context-renderer:has(ytm-media-item[class="big-shorts-singleton"]),
+ytm-video-with-context-renderer:has(ytm-media-item.big-shorts-singleton),
+ytm-video-with-context-renderer:has(ytm-media-item[class~="big-shorts-singleton"]),
 
 /* Hide entire compact video cards that are Shorts */
 ytm-compact-video-renderer:has(a[href^="/shorts/"]),
