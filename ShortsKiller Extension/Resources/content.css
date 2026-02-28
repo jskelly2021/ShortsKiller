@@ -1,6 +1,18 @@
-
 /* Hide the Shorts tab in the bottom pivot bar (m.youtube.com) */
 ytm-pivot-bar-renderer .pivot-bar-item-tab.pivot-shorts,
 ytm-pivot-bar-renderer .pivot-bar-item-title.pivot-shorts {
+  display: none !important;
+}
+
+
+/* Hide shorts cards in feeds */
+ytm-reel-shelf-renderer {
+    display: none !important;
+}
+
+
+/* Hide entire compact video cards that are Shorts */
+ytm-compact-video-renderer:has(a[href^="/shorts/"]),
+ytm-compact-video-renderer:has([data-style="SHORTS"]) {
   display: none !important;
 }
