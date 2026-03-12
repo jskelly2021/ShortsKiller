@@ -19,7 +19,7 @@ struct ContentView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
-            Text("Hides YouTube Shorts content in Safari.")
+            Text("Hides YouTube Shorts content and redirects Shorts pages to the YouTube homepage in Safari.")
                 .multilineTextAlignment(.center)
 
             VStack(alignment: .leading, spacing: 10) {

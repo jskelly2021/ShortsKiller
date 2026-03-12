@@ -11,20 +11,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5386C0602F4A5DA100BFE937 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5386C03A2F4A5D9800BFE937 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5386C0412F4A5D9800BFE937;
-			remoteInfo = ShortsKiller;
-		};
-		5386C06A2F4A5DA100BFE937 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5386C03A2F4A5D9800BFE937 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5386C0412F4A5D9800BFE937;
-			remoteInfo = ShortsKiller;
-		};
 		5386C0772F4A5DA100BFE937 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5386C03A2F4A5D9800BFE937 /* Project object */;
@@ -50,8 +36,6 @@
 
 /* Begin PBXFileReference section */
 		5386C0422F4A5D9800BFE937 /* ShortsKiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShortsKiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5386C05F2F4A5DA100BFE937 /* ShortsKillerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortsKillerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5386C0692F4A5DA100BFE937 /* ShortsKillerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShortsKillerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5386C0752F4A5DA100BFE937 /* ShortsKiller Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ShortsKiller Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -81,16 +65,6 @@
 			path = ShortsKiller;
 			sourceTree = "<group>";
 		};
-		5386C0622F4A5DA100BFE937 /* ShortsKillerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ShortsKillerTests;
-			sourceTree = "<group>";
-		};
-		5386C06C2F4A5DA100BFE937 /* ShortsKillerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ShortsKillerUITests;
-			sourceTree = "<group>";
-		};
 		5386C0792F4A5DA100BFE937 /* ShortsKiller Extension */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -112,20 +86,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5386C05C2F4A5DA100BFE937 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5386C0662F4A5DA100BFE937 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5386C0722F4A5DA100BFE937 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,8 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				5386C0442F4A5D9800BFE937 /* ShortsKiller */,
-				5386C0622F4A5DA100BFE937 /* ShortsKillerTests */,
-				5386C06C2F4A5DA100BFE937 /* ShortsKillerUITests */,
 				5386C0792F4A5DA100BFE937 /* ShortsKiller Extension */,
 				5386C0432F4A5D9800BFE937 /* Products */,
 			);
@@ -151,8 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				5386C0422F4A5D9800BFE937 /* ShortsKiller.app */,
-				5386C05F2F4A5DA100BFE937 /* ShortsKillerTests.xctest */,
-				5386C0692F4A5DA100BFE937 /* ShortsKillerUITests.xctest */,
 				5386C0752F4A5DA100BFE937 /* ShortsKiller Extension.appex */,
 			);
 			name = Products;
@@ -184,52 +140,6 @@
 			productName = ShortsKiller;
 			productReference = 5386C0422F4A5D9800BFE937 /* ShortsKiller.app */;
 			productType = "com.apple.product-type.application";
-		};
-		5386C05E2F4A5DA100BFE937 /* ShortsKillerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5386C09A2F4A5DA100BFE937 /* Build configuration list for PBXNativeTarget "ShortsKillerTests" */;
-			buildPhases = (
-				5386C05B2F4A5DA100BFE937 /* Sources */,
-				5386C05C2F4A5DA100BFE937 /* Frameworks */,
-				5386C05D2F4A5DA100BFE937 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5386C0612F4A5DA100BFE937 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				5386C0622F4A5DA100BFE937 /* ShortsKillerTests */,
-			);
-			name = ShortsKillerTests;
-			packageProductDependencies = (
-			);
-			productName = ShortsKillerTests;
-			productReference = 5386C05F2F4A5DA100BFE937 /* ShortsKillerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		5386C0682F4A5DA100BFE937 /* ShortsKillerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5386C09D2F4A5DA100BFE937 /* Build configuration list for PBXNativeTarget "ShortsKillerUITests" */;
-			buildPhases = (
-				5386C0652F4A5DA100BFE937 /* Sources */,
-				5386C0662F4A5DA100BFE937 /* Frameworks */,
-				5386C0672F4A5DA100BFE937 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5386C06B2F4A5DA100BFE937 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				5386C06C2F4A5DA100BFE937 /* ShortsKillerUITests */,
-			);
-			name = ShortsKillerUITests;
-			packageProductDependencies = (
-			);
-			productName = ShortsKillerUITests;
-			productReference = 5386C0692F4A5DA100BFE937 /* ShortsKillerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		5386C0742F4A5DA100BFE937 /* ShortsKiller Extension */ = {
 			isa = PBXNativeTarget;
@@ -266,14 +176,6 @@
 					5386C0412F4A5D9800BFE937 = {
 						CreatedOnToolsVersion = 26.2;
 					};
-					5386C05E2F4A5DA100BFE937 = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 5386C0412F4A5D9800BFE937;
-					};
-					5386C0682F4A5DA100BFE937 = {
-						CreatedOnToolsVersion = 26.2;
-						TestTargetID = 5386C0412F4A5D9800BFE937;
-					};
 					5386C0742F4A5DA100BFE937 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -294,8 +196,6 @@
 			projectRoot = "";
 			targets = (
 				5386C0412F4A5D9800BFE937 /* ShortsKiller */,
-				5386C05E2F4A5DA100BFE937 /* ShortsKillerTests */,
-				5386C0682F4A5DA100BFE937 /* ShortsKillerUITests */,
 				5386C0742F4A5DA100BFE937 /* ShortsKiller Extension */,
 			);
 		};
@@ -303,20 +203,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		5386C0402F4A5D9800BFE937 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5386C05D2F4A5DA100BFE937 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5386C0672F4A5DA100BFE937 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -340,20 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5386C05B2F4A5DA100BFE937 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5386C0652F4A5DA100BFE937 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5386C0712F4A5DA100BFE937 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -364,16 +236,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5386C0612F4A5DA100BFE937 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5386C0412F4A5D9800BFE937 /* ShortsKiller */;
-			targetProxy = 5386C0602F4A5DA100BFE937 /* PBXContainerItemProxy */;
-		};
-		5386C06B2F4A5DA100BFE937 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5386C0412F4A5D9800BFE937 /* ShortsKiller */;
-			targetProxy = 5386C06A2F4A5DA100BFE937 /* PBXContainerItemProxy */;
-		};
 		5386C0782F4A5DA100BFE937 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5386C0742F4A5DA100BFE937 /* ShortsKiller Extension */;
@@ -651,92 +513,6 @@
 			};
 			name = Release;
 		};
-		5386C09B2F4A5DA100BFE937 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M9XXLUF89C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobkelly.shortskillertests.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShortsKiller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShortsKiller";
-			};
-			name = Debug;
-		};
-		5386C09C2F4A5DA100BFE937 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M9XXLUF89C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobkelly.shortskillertests.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShortsKiller.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShortsKiller";
-			};
-			name = Release;
-		};
-		5386C09E2F4A5DA100BFE937 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M9XXLUF89C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobkelly.shortskilleruitests.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShortsKiller;
-			};
-			name = Debug;
-		};
-		5386C09F2F4A5DA100BFE937 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M9XXLUF89C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jacobkelly.shortskilleruitests.ios;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShortsKiller;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -763,24 +539,6 @@
 			buildConfigurations = (
 				5386C0962F4A5DA100BFE937 /* Debug */,
 				5386C0972F4A5DA100BFE937 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5386C09A2F4A5DA100BFE937 /* Build configuration list for PBXNativeTarget "ShortsKillerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5386C09B2F4A5DA100BFE937 /* Debug */,
-				5386C09C2F4A5DA100BFE937 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5386C09D2F4A5DA100BFE937 /* Build configuration list for PBXNativeTarget "ShortsKillerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5386C09E2F4A5DA100BFE937 /* Debug */,
-				5386C09F2F4A5DA100BFE937 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
