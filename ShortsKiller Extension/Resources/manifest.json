@@ -4,15 +4,13 @@
   "description": "Blocks YouTube Shorts by redirecting Shorts pages and removing Shorts UI from feeds.",
   "version": "1.0.0",
   "host_permissions": [
-    "*://www.youtube.com/*",
-    "*://m.youtube.com/*",
+    "*://*.youtube.com/*",
     "*://youtube.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://www.youtube.com/*",
-        "*://m.youtube.com/*",
+        "*://*.youtube.com/*",
         "*://youtube.com/*"
       ],
       "js": ["content.js"],
@@ -21,10 +19,10 @@
     }
   ],
   "icons": {
-    "48": "images/icon-48.png",
-    "96": "images/icon-96.png",
-    "128": "images/icon-128.png",
-    "256": "images/icon-256.png",
-    "512": "images/icon-512.png"
+    "48": "images/Icon-48.png",
+    "96": "images/Icon-96.png",
+    "128": "images/Icon-128.png",
+    "256": "images/Icon-256.png",
+    "512": "images/Icon-512.png"
   }
 }

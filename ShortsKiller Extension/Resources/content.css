@@ -1,7 +1,5 @@
 
 /* Hide the Shorts tab in the bottom pivot bar */
-/*ytm-pivot-bar-renderer .pivot-bar-item-tab.pivot-shorts,*/
-/*ytm-pivot-bar-renderer .pivot-bar-item-title.pivot-shorts,*/
 ytm-pivot-bar-item-renderer:has(.pivot-bar-item-tab.pivot-shorts),
 ytm-pivot-bar-item-renderer:has(.pivot-bar-item-title.pivot-shorts),
 
