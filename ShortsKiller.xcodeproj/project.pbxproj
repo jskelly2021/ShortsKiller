@@ -97,7 +97,6 @@
 				5386C0932F4A5DA100BFE937 /* Exceptions for "ShortsKiller Extension" folder in "ShortsKiller Extension" target */,
 			);
 			explicitFolders = (
-				Resources/_locales,
 				Resources/images,
 			);
 			path = "ShortsKiller Extension";
