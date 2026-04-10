@@ -45,7 +45,7 @@ The extension runs locally in Safari and modifies YouTube pages to remove Shorts
 ShortsKiller does not collect, store, or share any personal data.
 
 See full policy:
-👉 [Privacy Policy](https://yourusername.github.io/your-repo-name/)
+👉 [Privacy Policy](https://yourusername.github.io/ShortsKiller/privacy.html)
 
 ## License
 
