@@ -17,6 +17,7 @@ struct ContentView: View {
                     descriptionCard
                     enableStepsCard
                     settingsButton
+                    privacyPolicyLink
                     footerNote
                 }
                 .padding(20)
@@ -90,6 +91,20 @@ struct ContentView: View {
             .padding(.vertical, 14)
         }
         .buttonStyle(.borderedProminent)
+        .controlSize(.large)
+    }
+
+    private var privacyPolicyLink: some View {
+        Link(destination: URL(string: "https://jskelly2021.github.io/ShortsKiller/privacy.html")!) {
+            HStack {
+                Image(systemName: "lock.shield")
+                Text("Privacy Policy")
+                    .fontWeight(.semibold)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+        }
+        .buttonStyle(.bordered)
         .controlSize(.large)
     }
 
