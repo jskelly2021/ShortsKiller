@@ -3,7 +3,7 @@
 ShortsKiller is a Safari Web Extension for iOS that removes YouTube Shorts for a cleaner, less distracting browsing experience.
 
 <p align="center">
-  <img src="images/shortskiller.png" alt="ShortsKiller app icon" width="120">
+  <img src="docs/images/shortskiller.png" alt="ShortsKiller app icon" width="120">
 </p>
 
 ## Features
@@ -18,7 +18,7 @@ ShortsKiller is a Safari Web Extension for iOS that removes YouTube Shorts for a
 
 | App Home | Before Enabled | After Enabled |
 | --- | --- | --- |
-| <img src="images/app-home.png" alt="ShortsKiller app home screen" width="240"> | <img src="images/before-enabled.png" alt="YouTube before ShortsKiller is enabled" width="240"> | <img src="images/after-enabled.png" alt="YouTube after ShortsKiller is enabled" width="240"> |
+| <img src="docs/images/app-home.png" alt="ShortsKiller app home screen" width="240"> | <img src="docs/images/before-enabled.png" alt="YouTube before ShortsKiller is enabled" width="240"> | <img src="docs/images/after-enabled.png" alt="YouTube after ShortsKiller is enabled" width="240"> |
 
 ## How It Works
 
